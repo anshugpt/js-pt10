@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.color-box{
+    height: 100px;
+    width:500px ;
+    border: 1px solid black;
+}
