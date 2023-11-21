@@ -77,3 +77,64 @@ btn.addEventListener("click", function(){
 //  btn.addEventListener("click", changeColor);
 //  h3.addEventListener("click", changeColor);
 //  p.addEventListener("click", changeColor);
+
+//* Keyboard Event
+// it track the input from keyboard
+// there are lot of keyboard event like keydown, keyup, etc
+// syntax -> addEventListener("keyboard event", callback);
+
+let inp = document.querySelector("input");
+inp.addEventListener("keydown", function(){
+    console.log("key pressed");
+});
+
+
+//* Form Event
+// event like -> submit, etc are there 
+// if we add event.preventDefault(); -> it will not direct to the action mentioned in the action attribute
+
+let form = document.querySelector("form");
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+    console.log("form submitted");
+});
+
+//* Extracting form data
+
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+
+    let user = document.querySelector("#user");
+    let pass = document.querySelector("#pass");
+
+    console.log(user.value);
+    console.log(pass.value);
+
+});
+
+// there is a better way to access the form data
+
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+
+    let user = this.elements[0];
+    let pass = this.elements[1]; //* -> better way
+
+    console.log(user.value);
+    console.log(pass.value);
+});
+
+// 'this' -> form
+// form.elements[0] -> user input
+// form.elements[1] -> pass input
+
+//* More Events
+//* Change Events :-
+// when the value of the element changed then it get activated
+// only works on <input>, <textarea> and <select> elements
+// track only btw initial state and final state
+
+
+//* Input Event :-
+// when the value of the <input>, <select>, or <textarea> element has been changed.
+// it track small change
